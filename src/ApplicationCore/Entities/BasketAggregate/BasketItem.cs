@@ -26,8 +26,6 @@ public class BasketItem : BaseEntity
 
     public void SetQuantity(int quantity)
     {
-        Guard.Against.OutOfRange(quantity, nameof(quantity), 0, int.MaxValue);
-
         Quantity = quantity;
     }
 }

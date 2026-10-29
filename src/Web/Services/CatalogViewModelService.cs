@@ -43,7 +43,7 @@ public class CatalogViewModelService : ICatalogViewModelService
 
         var filterSpecification = new CatalogFilterSpecification(brandId, typeId);
         var filterPaginatedSpecification =
-            new CatalogFilterPaginatedSpecification(itemsPage * pageIndex, itemsPage, brandId, typeId);
+            new CatalogFilterPaginatedSpecification(itemsPage * (pageIndex + 1), itemsPage, brandId, typeId);
 
         // the implementation below using ForEach and Count. We need a List.
         var itemsOnPage = await _itemRepository.ListAsync(filterPaginatedSpecification);

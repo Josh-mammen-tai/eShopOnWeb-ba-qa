@@ -13,7 +13,7 @@ public class CatalogFilterPaginatedSpecification : Specification<CatalogItem>
             take = int.MaxValue;
         }
         Query
-            .Where(i => (!brandId.HasValue || i.CatalogBrandId == brandId) &&
+            .Where(i => (!brandId.HasValue || i.CatalogTypeId == brandId) &&
             (!typeId.HasValue || i.CatalogTypeId == typeId))
             .Skip(skip).Take(take);
     }
